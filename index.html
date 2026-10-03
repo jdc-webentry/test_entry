@@ -1,1 +1,169 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>JDC中部 テスト用エントリーフォーム一覧</title>
+<style>
+:root{
+  --gold:#b8892b; --gold-l:#e9c46a; --navy:#1f2a44; --pink:#e0527a;
+  --bg1:#fff8e8; --bg2:#eef4ff; --text:#2b2b3a; --muted:#6b7285;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Hiragino Kaku Gothic ProN","Yu Gothic","Meiryo",sans-serif;
+  color:var(--text); line-height:1.7;
+  background:linear-gradient(160deg,var(--bg1) 0%,#fff 45%,var(--bg2) 100%) fixed;
+  min-height:100vh;
+}
+.hero{
+  background:linear-gradient(135deg,#1f2a44 0%,#3a2f6b 55%,#b8892b 130%);
+  color:#fff; text-align:center; padding:48px 16px 56px; position:relative; overflow:hidden;
+}
+.hero::after{content:"";position:absolute;inset:0;
+  background:radial-gradient(circle at 80% 0%,rgba(233,196,106,.35),transparent 55%);pointer-events:none}
+.hero .badge{display:inline-block;background:linear-gradient(90deg,var(--gold-l),var(--gold));
+  color:#2b1d00;font-weight:700;font-size:13px;letter-spacing:.15em;padding:4px 16px;border-radius:999px;margin-bottom:14px;position:relative;z-index:1}
+.hero h1{font-size:clamp(22px,5vw,36px);font-weight:800;letter-spacing:.04em;position:relative;z-index:1}
+.hero p{margin-top:10px;font-size:clamp(13px,3.2vw,16px);opacity:.92;position:relative;z-index:1}
+.wrap{max-width:920px;margin:0 auto;padding:0 16px}
+.notice{
+  margin:-28px auto 28px;max-width:920px;position:relative;z-index:2;
+  background:#fff;border-radius:16px;border:2px solid var(--gold-l);
+  box-shadow:0 10px 30px rgba(31,42,68,.12);padding:20px 22px;
+}
+.notice h2{font-size:17px;color:var(--gold);margin-bottom:8px}
+.notice ul{padding-left:1.3em}
+.notice li{margin:4px 0;font-size:15px}
+.notice strong{color:var(--pink)}
+.event{margin-bottom:26px;background:#fff;border-radius:18px;overflow:hidden;
+  box-shadow:0 6px 22px rgba(31,42,68,.10);animation:fadeUp .6s both}
+.event:nth-child(2){animation-delay:.08s}.event:nth-child(3){animation-delay:.16s}.event:nth-child(4){animation-delay:.24s}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.event-head{background:linear-gradient(90deg,#fdf0cf,#fff);border-left:8px solid var(--gold);padding:14px 18px}
+.event-date{font-size:14px;font-weight:700;color:var(--gold)}
+.event-title{font-size:clamp(17px,4.2vw,22px);font-weight:800;color:var(--navy)}
+.links{display:grid;gap:12px;padding:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.btn{
+  display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--navy);
+  background:linear-gradient(135deg,#fff 0%,#fff7e0 100%);
+  border:2px solid #f0dca4;border-radius:14px;padding:14px 16px;min-height:64px;
+  transition:transform .2s,box-shadow .2s,border-color .2s;
+}
+.btn:hover,.btn:focus-visible{transform:translateY(-3px);border-color:var(--gold);box-shadow:0 8px 18px rgba(184,137,43,.28);outline:none}
+.btn:active{transform:scale(.98)}
+.num{flex:none;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;
+  background:linear-gradient(135deg,var(--gold-l),var(--gold));color:#2b1d00;font-weight:800;font-size:16px}
+.btn .t{font-weight:700;font-size:16px;line-height:1.35}
+.btn .t small{display:block;font-weight:400;font-size:11px;color:var(--muted);word-break:break-all;margin-top:2px}
+.btn .go{margin-left:auto;color:var(--gold);font-size:22px}
+.btn.latin .num{background:linear-gradient(135deg,#f6a6bf,var(--pink));color:#fff}
+.btn.solo .num{background:linear-gradient(135deg,#8fd3c7,#2a9d8f);color:#fff}
+.btn.tm .num{background:linear-gradient(135deg,#9db4ff,#4a63d8);color:#fff}
+.contact{margin:34px 0 0;background:var(--navy);color:#fff;border-radius:18px 18px 0 0;padding:26px 20px 30px;text-align:center}
+.contact h3{font-size:17px;color:var(--gold-l);margin-bottom:8px}
+.contact p{font-size:14px;margin:2px 0}
+.contact a{color:#fff;font-weight:700}
+.contact .tel a{display:inline-block;margin:6px 4px;background:rgba(255,255,255,.12);padding:8px 16px;border-radius:999px;text-decoration:none}
+footer{background:#141b2e;color:#9aa3b8;text-align:center;font-size:12px;padding:12px}
+@media (max-width:480px){
+  .hero{padding:36px 14px 48px}.notice{margin:-24px 12px 22px;padding:16px}
+  .links{padding:12px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <span class="badge">TEST ENTRY</span>
+  <h1>テスト用エントリーフォーム一覧</h1>
+  <p>過去の競技会のテスト用エントリーフォームです</p>
+</header>
+
+<main class="wrap">
+  <section class="notice" aria-labelledby="n-title">
+    <h2 id="n-title">📝 テストのお願い</h2>
+    <ul>
+      <li>自分の<strong>メールアドレスを正確に</strong>入力してください。</li>
+      <li>申し込み後、<strong>その内容が自分のメールアドレスに届いているか</strong>も確認してください。</li>
+      <li><strong>複数の日時＆セクションを選択</strong>し、試してください。</li>
+      <li>事務局では、<strong>事務局用のアマ申込み専用メールアドレス</strong>に申し込みデータが届いているかを確認してください。</li>
+    </ul>
+  </section>
+
+  <!-- 2026/5/17 -->
+  <section class="event">
+    <div class="event-head">
+      <div class="event-date">🗓 2026年5月17日(日)</div>
+      <div class="event-title">2026中部ダンスフェスティバル in 名古屋</div>
+    </div>
+    <div class="links">
+      <a class="btn" href="https://jdc-webentry.github.io/20260517_ama_entry/" target="_blank" rel="noopener">
+        <span class="num">1</span><span class="t">アマエントリーフォーム<small>20260517_ama_entry</small></span><span class="go">›</span></a>
+      <a class="btn latin" href="https://jdc-webentry.github.io/20260517_ama_latindoubles/" target="_blank" rel="noopener">
+        <span class="num">2</span><span class="t">ラテンダブルスエントリーフォーム<small>20260517_ama_latindoubles</small></span><span class="go">›</span></a>
+      <a class="btn solo" href="https://jdc-webentry.github.io/20260517_ama_solo/" target="_blank" rel="noopener">
+        <span class="num">3</span><span class="t">ソロダンスエントリーフォーム<small>20260517_ama_solo</small></span><span class="go">›</span></a>
+      <a class="btn tm" href="https://jdc-webentry.github.io/20260517_ama_tm/" target="_blank" rel="noopener">
+        <span class="num">4</span><span class="t">チームマッチエントリーフォーム<small>20260517_ama_tm</small></span><span class="go">›</span></a>
+    </div>
+  </section>
+
+  <!-- 2026/4/5 -->
+  <section class="event">
+    <div class="event-head">
+      <div class="event-date">🗓 2026年4月5日(日)</div>
+      <div class="event-title">2026中部ダンスフェスティバル in 金沢</div>
+    </div>
+    <div class="links">
+      <a class="btn" href="https://jdc-webentry.github.io/20260405_ama_entry/" target="_blank" rel="noopener">
+        <span class="num">1</span><span class="t">アマエントリーフォーム<small>20260405_ama_entry</small></span><span class="go">›</span></a>
+    </div>
+  </section>
+
+  <!-- 2026/3/15 -->
+  <section class="event">
+    <div class="event-head">
+      <div class="event-date">🗓 2026年3月15日(日)</div>
+      <div class="event-title">2026JDC全日本10ダンス選手権</div>
+    </div>
+    <div class="links">
+      <a class="btn" href="https://jdc-webentry.github.io/20260315_ama_entry/" target="_blank" rel="noopener">
+        <span class="num">1</span><span class="t">アマエントリーフォーム<small>20260315_ama_entry</small></span><span class="go">›</span></a>
+      <a class="btn latin" href="https://jdc-webentry.github.io/20260315_ama_latindoubles-/" target="_blank" rel="noopener">
+        <span class="num">2</span><span class="t">ラテンダブルス エントリー<small>20260315_ama_latindoubles-</small></span><span class="go">›</span></a>
+    </div>
+  </section>
+
+  <!-- 2026/2/1 -->
+  <section class="event">
+    <div class="event-head">
+      <div class="event-date">🗓 2026年2月1日(日)</div>
+      <div class="event-title">2026中部ダンスフェスティバル in 名古屋</div>
+    </div>
+    <div class="links">
+      <a class="btn" href="https://jdc-webentry.github.io/20260201_ama_entry/" target="_blank" rel="noopener">
+        <span class="num">1</span><span class="t">2026年2月1日 アマエントリーフォーム<small>20260201_ama_entry</small></span><span class="go">›</span></a>
+      <a class="btn latin" href="https://jdc-webentry.github.io/20260201_ama_latindoubles/" target="_blank" rel="noopener">
+        <span class="num">2</span><span class="t">ラテンダブルスエントリー<small>20260201_ama_latindoubles</small></span><span class="go">›</span></a>
+    </div>
+  </section>
+
+  <section class="contact" aria-labelledby="c-title">
+    <h3 id="c-title">JDC中部総局事務局</h3>
+    <p>〒464-0858</p>
+    <p>名古屋市千種区千種1丁目30-2 古井ノ坂ビル 201</p>
+    <p class="tel">
+      <a href="tel:0527452345">TEL 052-745-2345</a>
+      <a href="tel:0527452346">FAX 052-745-2346</a>
+    </p>
+    <p>E-mail：<a href="mailto:dance@k9.dion.ne.jp">dance@k9.dion.ne.jp</a></p>
+  </section>
+</main>
+<footer>© JDC中部総局 ／ 過去の競技会のテスト用ページです</footer>
+</body>
+</html>
 
